@@ -1,0 +1,451 @@
+/**
+ * Estilos específicos para Artistas
+ * Inspirado no Agenda Viva SP com identidade visual própria
+ * 
+ * @package RecifeMaisTema
+ * @since 2.0.0
+ */
+
+/* ========================================
+   ARCHIVE ARTISTAS
+   ======================================== */
+
+/* Hero Section */
+.hero-artistas {
+    background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 50%, #a855f7 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-artistas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="music-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23music-pattern)"/></svg>');
+    opacity: 0.3;
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Filtros Artistas */
+.filtros-artistas {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.filtros-artistas.sticky {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.filtros-artistas select:focus,
+.filtros-artistas input:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+}
+
+/* Cards de Artistas no Archive */
+.artista-card-archive {
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.artista-card-archive:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.15);
+}
+
+.artista-card-archive:nth-child(1) { animation-delay: 0.1s; }
+.artista-card-archive:nth-child(2) { animation-delay: 0.2s; }
+.artista-card-archive:nth-child(3) { animation-delay: 0.3s; }
+.artista-card-archive:nth-child(4) { animation-delay: 0.4s; }
+.artista-card-archive:nth-child(5) { animation-delay: 0.5s; }
+.artista-card-archive:nth-child(6) { animation-delay: 0.6s; }
+
+/* Seção de Gêneros Musicais */
+.generos-musicais .group:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.1);
+}
+
+.generos-musicais .group:hover .w-16 {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+}
+
+/* Paginação Artistas */
+.pagination-artistas .page-numbers {
+    @apply inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-purple-50 hover:text-purple-600 hover:border-purple-300 transition-all duration-200;
+}
+
+.pagination-artistas .page-numbers.current {
+    @apply bg-purple-600 text-white border-purple-600;
+}
+
+.pagination-artistas .page-numbers:first-child {
+    @apply rounded-l-lg;
+}
+
+.pagination-artistas .page-numbers:last-child {
+    @apply rounded-r-lg;
+}
+
+/* ========================================
+   SINGLE ARTISTA
+   ======================================== */
+
+/* Hero Artista */
+.hero-artista {
+    background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+    position: relative;
+}
+
+.hero-artista img {
+    transition: transform 0.7s ease;
+}
+
+.hero-artista:hover img {
+    transform: scale(1.05);
+}
+
+/* Status Badge Animado */
+.hero-artista .animate-pulse {
+    animation: pulse-custom 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-custom {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/* Meta Rápida */
+.meta-rapida .bg-white\/10 {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.meta-rapida .bg-white\/10:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Botões de Ação */
+.acoes-artista button,
+.acoes-artista a {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.acoes-artista button::before,
+.acoes-artista a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.acoes-artista button:hover::before,
+.acoes-artista a:hover::before {
+    left: 100%;
+}
+
+/* Dropdown Redes Sociais */
+#dropdown-redes {
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+#dropdown-redes.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0);
+}
+
+#dropdown-redes a {
+    transition: all 0.2s ease;
+}
+
+#dropdown-redes a:hover {
+    transform: translateX(4px);
+    background: linear-gradient(90deg, #f9fafb, #f3f4f6);
+}
+
+/* Meta Informações do Artista */
+.artista-meta-info {
+    animation: slideInUp 0.6s ease forwards;
+}
+
+.artista-meta-info h2 {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.artista-meta-info .bg-purple-50 {
+    background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+    border: 1px solid rgba(124, 58, 237, 0.1);
+}
+
+.artista-meta-info .bg-green-50 {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border: 1px solid rgba(34, 197, 94, 0.1);
+}
+
+.artista-meta-info .bg-yellow-50 {
+    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+    border: 1px solid rgba(245, 158, 11, 0.1);
+}
+
+.artista-meta-info .bg-indigo-50 {
+    background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+/* Artistas Relacionados */
+.artistas-relacionados {
+    background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+}
+
+.artista-relacionado {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.artista-relacionado:nth-child(1) { animation-delay: 0.1s; }
+.artista-relacionado:nth-child(2) { animation-delay: 0.2s; }
+.artista-relacionado:nth-child(3) { animation-delay: 0.3s; }
+.artista-relacionado:nth-child(4) { animation-delay: 0.4s; }
+.artista-relacionado:nth-child(5) { animation-delay: 0.5s; }
+.artista-relacionado:nth-child(6) { animation-delay: 0.6s; }
+
+/* ========================================
+   ANIMAÇÕES
+   ======================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+/* Loading Skeleton */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+
+/* Mobile First */
+@media (max-width: 640px) {
+    .hero-artistas {
+        padding: 2rem 0;
+    }
+    
+    .hero-artistas h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .hero-artistas .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .filtros-artistas .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .hero-artista {
+        height: 70vh;
+    }
+    
+    .hero-artista h1 {
+        font-size: 2.5rem;
+    }
+    
+    .meta-rapida .grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .acoes-artista .flex {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .acoes-artista button,
+    .acoes-artista a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .hero-artistas .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .filtros-artistas .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .meta-rapida .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    .filtros-artistas {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+    
+    .hero-artista:hover .meta-rapida .bg-white\/10 {
+        background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .artista-card-archive:hover {
+        transform: translateY(-12px) scale(1.02);
+    }
+}
+
+/* ========================================
+   ACESSIBILIDADE
+   ======================================== */
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .hero-artistas {
+        background: #4c1d95;
+    }
+    
+    .filtros-artistas {
+        background: #ffffff;
+        border: 2px solid #000000;
+    }
+    
+    .artista-meta-info {
+        border: 2px solid #7c3aed;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .artista-card-archive,
+    .artista-relacionado,
+    .artista-meta-info {
+        animation: none;
+    }
+    
+    .hero-artista img,
+    .acoes-artista button,
+    .acoes-artista a {
+        transition: none;
+    }
+    
+    .animate-pulse {
+        animation: none;
+    }
+}
+
+/* Focus States */
+.filtros-artistas select:focus,
+.filtros-artistas input:focus,
+.acoes-artista button:focus,
+.acoes-artista a:focus {
+    outline: 2px solid #7c3aed;
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .hero-artistas,
+    .filtros-artistas,
+    .artistas-relacionados {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .acoes-artista,
+    #dropdown-redes {
+        display: none !important;
+    }
+    
+    .artista-meta-info {
+        border: 1px solid #000000;
+        page-break-inside: avoid;
+    }
+}
+
+/* ========================================
+   DARK MODE (Preparação futura)
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+    .hero-artistas {
+        background: linear-gradient(135deg, #581c87 0%, #6b21a8 50%, #7c2d92 100%);
+    }
+    
+    .filtros-artistas {
+        background: rgba(17, 24, 39, 0.95);
+        border-color: rgba(75, 85, 99, 0.3);
+    }
+    
+    .artista-meta-info {
+        background: #1f2937;
+        border-color: #374151;
+        color: #f9fafb;
+    }
+} 

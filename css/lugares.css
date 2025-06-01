@@ -1,0 +1,530 @@
+/**
+ * CSS Específico para Lugares
+ * Estilos para archive-lugares.php e single-lugares.php
+ * 
+ * @package RecifeMaisTema
+ * @since 2.0.0
+ */
+
+/* ========================================
+   ARCHIVE LUGARES
+   ======================================== */
+
+/* Hero Section */
+.hero-lugares {
+    min-height: 70vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-lugares::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(59, 130, 246, 0.8) 50%, rgba(147, 197, 253, 0.7) 100%);
+    z-index: 1;
+}
+
+.hero-lugares .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Filtros Sticky */
+.filtros-lugares {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.filtros-lugares.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards de Lugares no Archive */
+.lugar-card-archive {
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.lugar-card-archive:nth-child(1) { animation-delay: 0.1s; }
+.lugar-card-archive:nth-child(2) { animation-delay: 0.2s; }
+.lugar-card-archive:nth-child(3) { animation-delay: 0.3s; }
+.lugar-card-archive:nth-child(4) { animation-delay: 0.4s; }
+.lugar-card-archive:nth-child(5) { animation-delay: 0.5s; }
+.lugar-card-archive:nth-child(6) { animation-delay: 0.6s; }
+
+.lugar-card-archive:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Categorias Grid */
+.categorias-lugares .grid > a {
+    transition: all 0.3s ease;
+}
+
+.categorias-lugares .grid > a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Paginação */
+.pagination-lugares {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.pagination-lugares .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    color: #6b7280;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.pagination-lugares .page-numbers:hover,
+.pagination-lugares .page-numbers.current {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.pagination-lugares .prev,
+.pagination-lugares .next {
+    width: auto;
+    padding: 0 1rem;
+    font-size: 0.875rem;
+}
+
+/* ========================================
+   SINGLE LUGAR
+   ======================================== */
+
+/* Hero Section */
+.single-lugar .hero-lugar {
+    min-height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.single-lugar .hero-lugar img {
+    transition: transform 0.7s ease;
+}
+
+.single-lugar .hero-lugar:hover img {
+    transform: scale(1.05);
+}
+
+/* Status Badge Animado */
+.single-lugar .hero-lugar span[class*="bg-"] {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Meta Informações Rápidas */
+.meta-rapida {
+    transform: translateY(-2rem);
+    border-radius: 1rem 1rem 0 0;
+}
+
+.meta-rapida .grid > div {
+    transition: all 0.3s ease;
+}
+
+.meta-rapida .grid > div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Botões de Ação */
+.acoes-lugar a,
+.acoes-lugar button {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.acoes-lugar a::before,
+.acoes-lugar button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.acoes-lugar a:hover::before,
+.acoes-lugar button:hover::before {
+    left: 100%;
+}
+
+/* Dropdown de Direções */
+#dropdown-direcoes {
+    animation: slideDown 0.3s ease;
+    transform-origin: top;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scaleY(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+/* Cards de Conteúdo */
+.single-lugar .bg-white {
+    transition: all 0.3s ease;
+}
+
+.single-lugar .bg-white:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Prose Styling para Conteúdo */
+.prose {
+    color: #374151;
+    line-height: 1.75;
+}
+
+.prose h2 {
+    color: #111827;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.prose h3 {
+    color: #1f2937;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.prose p {
+    margin-bottom: 1.25rem;
+}
+
+.prose a {
+    color: #2563eb;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.prose a:hover {
+    color: #1d4ed8;
+}
+
+.prose ul,
+.prose ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+}
+
+.prose li {
+    margin-bottom: 0.5rem;
+}
+
+.prose blockquote {
+    border-left: 4px solid #2563eb;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #6b7280;
+}
+
+/* Mapa Container */
+#lugar-mapa,
+#lugar-mapa-principal {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+#lugar-mapa:hover,
+#lugar-mapa-principal:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Lugares Relacionados */
+.lugares-relacionados .lugar-relacionado {
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.lugares-relacionados .lugar-relacionado:nth-child(1) { animation-delay: 0.1s; }
+.lugares-relacionados .lugar-relacionado:nth-child(2) { animation-delay: 0.2s; }
+.lugares-relacionados .lugar-relacionado:nth-child(3) { animation-delay: 0.3s; }
+.lugares-relacionados .lugar-relacionado:nth-child(4) { animation-delay: 0.4s; }
+.lugares-relacionados .lugar-relacionado:nth-child(5) { animation-delay: 0.5s; }
+.lugares-relacionados .lugar-relacionado:nth-child(6) { animation-delay: 0.6s; }
+
+/* ========================================
+   ANIMAÇÕES
+   ======================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Loading States */
+.loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+
+/* Mobile First */
+@media (max-width: 640px) {
+    .hero-lugares {
+        min-height: 60vh;
+        background-attachment: scroll;
+    }
+    
+    .filtros-lugares .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .meta-rapida .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .acoes-lugar .flex {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .single-lugar .hero-lugar {
+        min-height: 50vh;
+    }
+    
+    .single-lugar h1 {
+        font-size: 2rem !important;
+        line-height: 1.2;
+    }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .filtros-lugares .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .meta-rapida .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    .hero-lugares {
+        background-attachment: fixed;
+    }
+    
+    .filtros-lugares {
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+    
+    .lugar-card-archive:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* ========================================
+   ACESSIBILIDADE
+   ======================================== */
+
+/* Focus States */
+.filtros-lugares select:focus,
+.filtros-lugares input:focus,
+.filtros-lugares button:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+.acoes-lugar a:focus,
+.acoes-lugar button:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .hero-lugares::before {
+        background: rgba(0, 0, 0, 0.8);
+    }
+    
+    .filtros-lugares {
+        background: #ffffff;
+        border: 2px solid #000000;
+    }
+    
+    .lugar-card-archive {
+        border: 2px solid #000000;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .lugar-card-archive,
+    .lugar-relacionado,
+    .hero-lugares img,
+    .acoes-lugar a,
+    .acoes-lugar button {
+        animation: none;
+        transition: none;
+    }
+    
+    .hero-lugares {
+        background-attachment: scroll;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .hero-lugares,
+    .filtros-lugares,
+    .acoes-lugar,
+    .lugares-relacionados {
+        display: none;
+    }
+    
+    .single-lugar .bg-white {
+        box-shadow: none;
+        border: 1px solid #000000;
+    }
+    
+    .prose a {
+        color: #000000;
+        text-decoration: underline;
+    }
+    
+    .prose a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666666;
+    }
+}
+
+/* ========================================
+   DARK MODE (Futuro)
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+    .filtros-lugares {
+        background: rgba(17, 24, 39, 0.95);
+        color: #f9fafb;
+    }
+    
+    .filtros-lugares select,
+    .filtros-lugares input {
+        background: #374151;
+        border-color: #4b5563;
+        color: #f9fafb;
+    }
+    
+    .lugar-card-archive {
+        background: #1f2937;
+        border-color: #374151;
+    }
+    
+    .prose {
+        color: #d1d5db;
+    }
+    
+    .prose h2,
+    .prose h3 {
+        color: #f9fafb;
+    }
+} 

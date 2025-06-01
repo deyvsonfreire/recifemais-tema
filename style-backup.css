@@ -1,0 +1,18 @@
+/*
+Theme Name: RecifeMais Tema
+Description: Tema personalizado para o portal RecifeMais - Cultura de Pernambuco
+Author: RecifeMais Team
+Version: 2.0.0
+Template: twentytwentyfive
+Text Domain: recifemais-tema
+Domain Path: /languages
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 8.0
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: culture, events, pernambuco, recife, custom-post-types, tailwind
+*/
+
+/* Tailwind CSS compilado */
+.-translate-y-1\/2,.btn-primary,.btn-secondary,.card,.group-hover\:scale-105,.hover\:-translate-y-1,.hover\:-translate-y-2,.transform{--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1}

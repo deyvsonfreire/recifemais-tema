@@ -1,0 +1,430 @@
+/**
+ * CSS Específico para Eventos
+ * Archive e Single Pages
+ * 
+ * @package RecifeMaisTema
+ * @since 2.0.0
+ */
+
+/* ===== ARCHIVE EVENTOS ===== */
+
+/* Hero Section */
+.hero-eventos {
+    position: relative;
+    background-attachment: fixed;
+}
+
+.hero-eventos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.9) 0%, rgba(239, 68, 68, 0.8) 100%);
+    z-index: 1;
+}
+
+.hero-eventos > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Filtros Sticky */
+.filtros-eventos {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.filtros-eventos.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards de Eventos no Archive */
+.evento-card-archive {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.evento-card-archive:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: #dc2626;
+}
+
+/* Categorias Grid */
+.categorias-eventos .group {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.categorias-eventos .group:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Paginação */
+.pagination-eventos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.pagination-eventos .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    color: #6b7280;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.pagination-eventos .page-numbers:hover,
+.pagination-eventos .page-numbers.current {
+    background-color: #dc2626;
+    border-color: #dc2626;
+    color: white;
+}
+
+.pagination-eventos .prev,
+.pagination-eventos .next {
+    width: auto;
+    padding: 0 1rem;
+}
+
+/* ===== SINGLE EVENTO ===== */
+
+/* Hero Section Single */
+.single-evento .hero-evento {
+    position: relative;
+    overflow: hidden;
+}
+
+.single-evento .hero-evento img {
+    transition: transform 0.5s ease;
+}
+
+.single-evento .hero-evento:hover img {
+    transform: scale(1.05);
+}
+
+/* Status Badge Animado */
+.single-evento .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Botões de Ação */
+.single-evento .bg-red-600 {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.single-evento .bg-red-600:hover {
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+    transform: translateY(-1px);
+}
+
+.single-evento .bg-blue-600 {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.single-evento .bg-blue-600:hover {
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    transform: translateY(-1px);
+}
+
+.single-evento .bg-green-600 {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+}
+
+.single-evento .bg-green-600:hover {
+    box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Cards de Conteúdo */
+.single-evento .bg-white {
+    border: 1px solid #f3f4f6;
+    transition: all 0.3s ease;
+}
+
+.single-evento .bg-white:hover {
+    border-color: #e5e7eb;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Prose Styling */
+.single-evento .prose {
+    color: #374151;
+    line-height: 1.75;
+}
+
+.single-evento .prose h2 {
+    color: #111827;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.single-evento .prose h3 {
+    color: #1f2937;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.single-evento .prose p {
+    margin-bottom: 1.25rem;
+}
+
+.single-evento .prose a {
+    color: #dc2626;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.single-evento .prose a:hover {
+    color: #b91c1c;
+    text-decoration: underline;
+}
+
+/* Mapa Container */
+#evento-mapa {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+#evento-mapa::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #f3f4f6;
+    border-radius: 0.5rem;
+    pointer-events: none;
+}
+
+/* Sidebar Styling */
+.single-evento .space-y-6 > * + * {
+    margin-top: 1.5rem;
+}
+
+/* Tags/Badges */
+.single-evento .bg-red-100 {
+    transition: all 0.2s ease;
+}
+
+.single-evento .bg-red-100:hover {
+    background-color: #fecaca;
+    transform: translateY(-1px);
+}
+
+.single-evento .bg-blue-100 {
+    transition: all 0.2s ease;
+}
+
+.single-evento .bg-blue-100:hover {
+    background-color: #dbeafe;
+    transform: translateY(-1px);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Mobile First */
+@media (max-width: 640px) {
+    .hero-eventos {
+        background-attachment: scroll;
+    }
+    
+    .filtros-eventos form {
+        padding: 1rem;
+    }
+    
+    .filtros-eventos .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .single-evento .hero-evento h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .single-evento .grid-cols-1.md\\:grid-cols-3 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .single-evento .flex-wrap {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .single-evento .flex-wrap > * {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .categorias-eventos .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .single-evento .lg\\:col-span-2 {
+        grid-column: span 2;
+    }
+    
+    .single-evento .lg\\:col-span-1 {
+        grid-column: span 1;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    .hero-eventos {
+        background-attachment: fixed;
+    }
+    
+    .filtros-eventos.scrolled {
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+    
+    .single-evento .container {
+        max-width: 1200px;
+    }
+}
+
+/* ===== ANIMAÇÕES ===== */
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Stagger Animation para Cards */
+.evento-card-archive:nth-child(1) { animation-delay: 0.1s; }
+.evento-card-archive:nth-child(2) { animation-delay: 0.2s; }
+.evento-card-archive:nth-child(3) { animation-delay: 0.3s; }
+.evento-card-archive:nth-child(4) { animation-delay: 0.4s; }
+.evento-card-archive:nth-child(5) { animation-delay: 0.5s; }
+.evento-card-archive:nth-child(6) { animation-delay: 0.6s; }
+
+/* Loading States */
+.loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ===== ACESSIBILIDADE ===== */
+
+/* Focus States */
+.filtros-eventos input:focus,
+.filtros-eventos select:focus,
+.single-evento button:focus,
+.single-evento a:focus {
+    outline: 2px solid #dc2626;
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .hero-eventos {
+        background: #000;
+        color: #fff;
+    }
+    
+    .bg-white {
+        background: #fff !important;
+        border: 2px solid #000 !important;
+    }
+    
+    .text-gray-600 {
+        color: #000 !important;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .hero-eventos {
+        background-attachment: scroll !important;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .filtros-eventos,
+    .single-evento .flex.flex-wrap,
+    .categorias-eventos {
+        display: none !important;
+    }
+    
+    .single-evento .bg-white {
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+    }
+    
+    .single-evento .text-white {
+        color: #000 !important;
+    }
+    
+    .single-evento .bg-red-600,
+    .single-evento .bg-blue-600,
+    .single-evento .bg-green-600 {
+        background: #fff !important;
+        color: #000 !important;
+        border: 1px solid #000 !important;
+    }
+} 
